@@ -1,0 +1,38 @@
+// 项目原作者
+https://github.com/zhiguai/CZ-LoveCards
+
+// 前期托管服务
+https://github.com
+
+// 托管服务
+https://www.cloudflare.com
+
+// 故障检测与数据提交
+https://www.fundebug.com
+
+// 感谢
+https://love.kiana.run/index/index.php
+
+// 问题搜索服务 : )
+https://cn.bing.com
+
+// 数据提交
+https://texjp.org/
+
+// 问题解答
+https://www.html.cn/qa/javascript/11736.html // 浅无语下, true写成ture
+https://blog.csdn.net/weixin_42609477/article/details/108330294
+https://www.feiniaomy.com/post/954.html
+
+// 工具
+http://www.metools.info/code/c80.html
+https://validator.w3.org/nu/
+https://www.itdog.cn/ping/
+https://www.runoob.com/
+
+// Cookie
+https://www.php.cn/js-tutorial-473474.html
+http://m.biancheng.net/view/9376.html
+
+
+

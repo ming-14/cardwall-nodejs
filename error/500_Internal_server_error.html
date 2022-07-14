@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="referrer" content="no-referrer" />
+
+        <title>跳转中</title>
+    </head>
+    <body>
+        <p>我们发现了亿点错误，正在跳转...</p>
+    </body>
+
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+function getQueryVariable( variable )
+{
+    var query = window.location.search.substring( 1 );
+    var vars = query.split( "&" );
+    for ( var i = 0; i < vars.length; i++ )
+    {
+        var pair = vars[ i ].split( "=" );
+        if ( pair[ 0 ] == variable )
+        {
+            return pair[ 1 ];
+        }
+    }
+    return ( false );
+}
+
+　　function GetUrlRelativePath(url)
+　　{
+　　　　var arrUrl = url.split("//");
+
+　　　　var start = arrUrl[1].indexOf("/");
+　　　　var relUrl = arrUrl[1].substring(start);//stop省略，截取从start开始到结尾的所有字符
+
+　　　　return relUrl;
+　　}
+
+    $.ajax({
+        url:"http:// "+"/error",
+        type:"POST",
+        data:{
+                 "url": getQueryVariable("url"),
+                 "err": getQueryVariable("err")
+             },
+        success:function ()
+                {
+                    try
+                    {    
+                        if(getQueryVariable('from') === false)
+                        {
+                            throw "https://cardwall.pages.dev/";
+                        }
+                        window.location = "https://cardwall.pages.dev"+GetUrlRelativePath(decodeURIComponent( getQueryVariable('from') ));
+                    }
+                    catch(err)
+                    {
+                        window.location = err;
+                    }
+		},
+	error:function ()
+                {
+                    try
+                    {    
+                        if(getQueryVariable('from') === false)
+                        {
+                            throw "https://cardwall.pages.dev/";
+                        }
+                        window.location = "https://cardwall.pages.dev"+GetUrlRelativePath(decodeURIComponent( getQueryVariable('from') ));
+                    }
+                    catch(err)
+                    {
+                        window.location = err;
+                    }
+		},
+        dataType : "json"
+    });
+</script>

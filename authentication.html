@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width">
+        <meta name="referrer" content="no-referrer" />
+
+        <title>盆友圈 表白墙</title>
+
+        <!-- build:css -->
+        <link href="library/app/app.min.css" rel="stylesheet" type="text/css" />
+        <!-- endbuild -->
+
+        <!-- css -->
+        <link href="css/main.css" rel="stylesheet" type="text/css">
+        <!-- css -->
+    </head>
+
+    <body>
+        <!-- 侧栏 -->
+        <div class="wrapper">
+
+            <!-- 侧栏 -->
+
+            <!-- ============================================================== -->
+            <!-- 主界面 Start -->
+            <!-- ============================================================== -->
+
+            <div class="content">
+
+                <div class="container-fluid">
+                    <!-- 头部引入页面-->
+
+                    <br>
+                    <!-- Start Content-->
+                    <div id="alert"></div>
+                    <!-- End content -->
+
+                    <div class="account-pages mt-5 mb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-6">
+                                    <div class="card">
+                                        <!-- Logo -->
+                                        <div class="btn btn-block btn-danger">
+                                            <h1 style="font-size:20px">身份验证</h1>
+                                        </div>
+
+                                        <div class="card-body p-4">
+                                            <div class="text-center w-75 m-auto">
+                                                <h4 class="text-dark-50 text-center mt-3 font-weight-bold">我们需要验证你来自咱班，请回答几个问题</h4>
+                                            </div>
+
+                                            <div class="form-group mb-3">
+                                                <br>
+                                                <label>18考场的隐藏学霸是谁？（只需要填姓氏）</label>
+                                                <input type="text" class="form-control" id="p1" placeholder="只需回答姓氏" />
+                                                <br>
+                                                <br>
+                                                <label>班主任是谁？（只需要填姓氏）</label>
+                                                <input type="text" class="form-control" id="p2" placeholder="只需回答姓氏" />
+                                                <br>
+                                            </div>
+                                            <a href="index.html" style="color:#5D5D5D">我不知道，回首页<a>
+                                            <button id="embed-submit" type="submit" value="提交" class="foot-right btn btn-danger" onclick="go(document.getElementById('p1').value, document.getElementById('p2').value);">验证</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ============================================================== -->
+            <!-- 主界面 End -->
+            <!-- ============================================================== -->
+
+        </div>
+    </body>
+
+    <link href="css/loading.css" rel="stylesheet" type="text/css">
+    <script src="js/loading.js"></script>
+    <!-- Jquery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/config/config.js"></script>
+    <script src="js/cookie.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        if(!check())
+            {
+                maketip(2, "请注意，您的浏览器不支持Cookie，身份验证可能会失败");
+            }
+    </script>
+    <script>
+        function go(p1, p2)
+                {
+                    makeloading();
+                    $.ajax({
+        		url:api_url+"/api/check",
+        		data:{ '18kcdycxb':p1, 'bzr':p2 },
+        		type:"GET",
+        		success:function (data, r) {
+                 	    removeloading();
+        		    if(data.code === 200) 
+        		    {
+        		        if(data.data)
+        		        {
+        		            document.cookie="authentication_answer="+escape(p1)+"|"+escape(p2);
+        		            window.location ="writeCard.html?notifications=1&notifications_content=身份验证成功，可以开始写卡片了";
+        		        }
+        		        else
+        		        {
+        		            window.location ="authentication.html?notifications=2&notifications_content=身份验证失败。tip：只需要填姓氏";
+        		        }
+        		    }else{window.location ="authentication.html?notifications=3&notifications_content=连接服务器失败";}
+        		},
+        		error:function(err){ window.location="error/500_Internal_server_error.html?from="+encodeURIComponent(window.location.href)+"&err="+encodeURIComponent(JSON.stringify(err)); },
+        		dataType : "json"
+        	        });
+                }
+    </script>
+</html>

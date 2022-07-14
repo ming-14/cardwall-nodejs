@@ -1,0 +1,241 @@
+<!-- card -->
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width">
+        <meta name="referrer" content="no-referrer" />
+
+        <title>盆友圈 表白墙</title>
+
+        <!-- build:css -->
+        <link href="library/app/app.min.css" rel="stylesheet" type="text/css" />
+        <!-- endbuild -->
+
+        <!-- css -->
+        <link href="css/main.css" rel="stylesheet" type="text/css">
+        <!-- css -->
+    </head>
+
+    <body>
+        <div class="wrapper">
+
+            <!-- 侧栏 Start -->
+            <div class="left-side-menu">
+            
+                <div class="slimscroll-menu">
+                
+                    <!-- LOGO图标 -->
+                    <a class="logo text-center mb-4 active">
+                        <span class="logo-lg">
+                            <span class="mdi mdi-heart-pulse text-white" style="font-size:80px"></span>
+                        </span>
+                        <span class="logo-sm">
+                            <img src="library/logo_sm.png" alt="" height="16">
+                        </span>
+                    </a>
+
+                    <!--- 导航 Start -->
+                    <ul class="metismenu side-nav">
+
+                        <li class="side-nav-title side-nav-item">导航</li>
+
+                            <li class="side-nav-item">
+                                <a href="index.html" class="side-nav-link">
+                                    <i class="dripicons-meter"></i>
+                                    <span>首页</span>
+                                </a>
+                            </li>
+                            
+                            <li class="side-nav-item">
+                                <a href="wall.html" class="side-nav-link">
+                                    <i class="mdi mdi-wall"></i>
+                                    <span>表白墙</span>
+                                </a>
+                            </li>
+
+                            <li class="side-nav-item">
+                                <a href="writeCard.html" class="side-nav-link">
+                                    <i class="mdi mdi-heart-box"></i>
+                                    <span>我要表白</span>
+                                </a>
+                            </li>
+
+                    </ul>
+                    <!-- 导航 End -->
+
+                    <div class="clearfix"></div>
+                </div>
+
+            </div>
+            <!-- 侧栏 End -->
+
+            <!-- ============================================================== -->
+            <!-- 主界面 Start -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    <div class="navbar-custom">
+                        <button class="button-menu-mobile open-left disable-btn" type="button" aria-label="菜单栏">
+                            <i class="mdi mdi-menu"></i>
+                        </button>
+                    </div>
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        
+                        <br>
+                        <!-- Start Content-->
+                        <div id="alert"></div>
+                        <!-- End content -->
+
+                        <!-- 内容标题 Start -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title" id="name">
+                                        {loading...}
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 内容标题 End -->
+
+                        <!-- 主卡片 Start -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card bg-danger">
+                                    <div class="card-body profile-user-box">
+                                        <div class="row">
+                                            <!-- 内 -->
+                                            <div class="col-sm-4">
+                                                <h4 class="mt-1 mb-1 text-white" id="sponsor">{loading...}</h4>
+                                            </div>
+                                            <div class="col-sm-4 text-right">
+                                                <h4 class="mt-1 mb-1 text-white" id="lover">{loading...}</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 主卡片 End -->
+
+                        <div class="row">
+
+                            <div class="col-md-8">
+
+                                <!-- 内容卡 Start -->
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="header-title mt-0 mb-3" id="cardtip">{loading...}</h4>
+                                        <p class="text-muted font-13" id="tosay">{loading...}</p>
+                                        <hr>
+                                        <small class="text-muted" id="time">{loading...}</small>
+                                        <div class="text-left">
+                                            <br>
+                                            <!--点赞-->
+                                            <br>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 内容卡 End -->
+                            </div>
+
+                            <div class="col-md-4">
+                            
+                                <!-- 评论框 Start -->
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="header-title mb-3">评论</h4>
+                                        <div class="table-responsive">
+
+                                            <!--<form action="javascript:alert('QWQ 评论没做好');" method="post" style="margin: 0px;padding: 0px;z-index: 999;">-->
+
+                                                <input name="state" style="display: none;" value="comment" />
+                                                <input name="cardid" style="display: none;" value="2" />
+
+                                                <div class="form-group mb-3">
+                                                    <input class="form-control" placeholder="名字" value="" style="width: 98%;margin-left: 1%;" MaxLength="20" id="Myname"/>
+                                                </div>
+
+                                                <div class="form-group mb-3">
+                                                    <input type="text" placeholder="内容..." class="form-control" style="width: 98%;margin-left: 1%;" MaxLength="100" id="content" />
+                                                </div>
+
+                                                <button id="embed-submit" type="submit" value="提交" onclick="makeloading(); addComment(removeloading);" class="foot-right btn btn-danger">提交</button>
+                                            <!--</form>-->
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 评论框 End -->
+                                
+                                <!-- 评论卡 Start -->
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="header-title mb-3">评论
+                                            <small class="text-muted foot-right" id="commentsum">{loading...}</small>
+                                        </h4>
+                                        
+                                        <div class="inbox-widget" id="comment_body">
+                                        
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <!-- 评论卡 End -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End content -->
+                
+                <!-- 页脚 Start -->
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">Copyright © 2021-2022 me</div>
+                            <div class="col-md-6">
+                                <div class="text-md-right footer-links d-none d-sm-block">
+                                    <a href="#"></a>
+                                </div>
+                           </div>
+                       </div>
+                    </div>
+                </footer>
+                <!-- 页脚 End -->
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- 主界面 End -->
+            <!-- ============================================================== -->
+
+        </div>
+</body>
+
+        <link href="css/loading.css" rel="stylesheet" type="text/css">
+        <script src="js/loading.js"></script>
+        <script>
+            makeloading();
+        </script>
+        
+        <script src="js/config/config.js"></script>
+        <!-- Jquery--><!-- 依赖项 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- app 基本外观 --><!-- 依赖项 -->
+        <script src="library/app/app.min.js"></script>
+        <!-- 方便使用cookie --><!-- 依赖项 -->
+        <script src="js/cookie.js"></script>
+        <!-- main -->
+        <script src="js/main.js"></script>
+        <script src="js/moveDivl.js"></script>
+        <script src="js/card.js"></script>
+        
+        <script>
+            initCardData(getQueryVariable("id"), removeloading );
+            initComment();
+        </script>
+    
+</html>

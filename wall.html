@@ -1,0 +1,178 @@
+<!-- wall -->
+<!-- 这个界面就是主页稍微改一改 -->
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="referrer" content="no-referrer" />
+
+        <title>盆友圈 表白墙</title>
+        
+        <!-- build:css -->
+        <link href="library/app/app.min.css" rel="stylesheet" type="text/css">
+        <!-- endbuild -->
+
+        <!-- css -->
+        <link href="css/main.css" rel="stylesheet" type="text/css">
+        <!-- css -->
+    </head>
+
+    <body>
+        <div class="wrapper">
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="left-side-menu active">
+
+                <div class="slimScrollDiv in" style="position: relative; overflow: hidden; width: auto; height: 727px;">
+                    <div class="slimscroll-menu active" style="overflow: hidden; width: auto; height: 727px;">
+
+                        <!-- LOGO图标 -->
+                        <a class="logo text-center mb-4 active">
+                            <span class="logo-lg">
+                                <span class="mdi mdi-heart-pulse text-white" style="font-size:80px"></span>
+                            </span>
+                            <span class="logo-sm">
+                                <img src="library/logo_sm.png" alt="" height="16">
+                            </span>
+                        </a>
+
+                        <!--- 导航 Start -->
+                        <ul class="metismenu side-nav in">
+
+                            <li class="side-nav-title side-nav-item">导航</li>
+
+                            <li class="side-nav-item">
+                                <a href="index.html" class="side-nav-link">
+                                    <i class="dripicons-meter"></i>
+                                    <span>首页</span>
+                                </a>
+                            </li>
+                            
+                            <li class="side-nav-item">
+                                <a href="wall.html" class="side-nav-link">
+                                    <i class="mdi mdi-wall"></i>
+                                    <span>表白墙</span>
+                                </a>
+                            </li>
+
+                            <li class="side-nav-item">
+                                <a href="writeCard.html" class="side-nav-link">
+                                    <i class="mdi mdi-heart-box"></i>
+                                    <span>我要表白</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                        <!--- 导航 End -->
+
+                        <div class="clearfix"></div>
+
+                    </div>
+                    <div class="slimScrollBar" style="background: rgb(158, 165, 171); width: 8px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 727px;"></div>
+                    <div class="slimScrollRail" style="width: 8px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>
+                </div>
+
+            </div>
+            <!-- ========== Left Sidebar End ========== -->
+
+            <!-- ============================================================== -->
+            <!-- 主界面 Start -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+
+                    <!-- 顶栏 -->
+                    <div class="navbar-custom">
+                        <button class="button-menu-mobile open-left disable-btn" type="button" aria-label="菜单栏">
+                            <i class="mdi mdi-menu"></i>
+                        </button>
+                    </div>
+                    <!-- 顶栏 -->
+
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        
+                        <br>
+                        <!-- Start Content-->
+                        <div id="alert"></div>
+                        <!-- End content -->
+                        
+                        <!-- 内容标题 Start -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title">表白卡</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 内容标题 End -->
+                        
+                        <div class="mt-1 mb-1">
+                                
+                                <br>
+                                <!-- 便签卡 -->
+                                <div class="col-12">
+                                    <div class="text-center">
+                                        <h1 style="font-size:20px">表白列表</h1>
+                                    </div>
+                                    <br>
+                                    <div class="row" id="cards">
+
+
+                                    <!-- 表白卡 -->
+
+                                    <!-- END 表白卡 -->
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 页脚 Start -->
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">Copyright © 2021-2022 me</div>
+                            <div class="col-md-6">
+                                <div class="text-md-right footer-links d-none d-sm-block">
+                                    <a href="#"></a>
+                                </div>
+                           </div>
+                       </div>
+                    </div>
+                </footer>
+                <!-- 页脚 End -->
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- 主界面 End -->
+            <!-- ============================================================== -->
+
+        </div>
+
+        </body>
+
+            <link href="css/loading.css" rel="stylesheet" type="text/css">
+            <script src="js/loading.js"></script>
+            <script>
+                makeloading();
+            </script>
+            
+            <script src="js/config/config.js"></script>
+            <!-- Jquery--><!-- 依赖项 -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <!-- app 基本外观 --><!-- 依赖项 -->
+            <script src="library/app/app.min.js"></script>
+            <!-- 方便使用cookie --><!-- 依赖项 -->
+            <script src="js/cookie.js"></script>
+            <!-- main -->
+            <script src="js/main.js"></script>
+            <script src="js/frontDesk-index.js"></script>
+            <script>
+                init(removeloading);
+            </script>
+</html>

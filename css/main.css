@@ -1,0 +1,43 @@
+.foot-left
+{
+    float: left;
+    font-size: 13px;
+    font-family: "微软雅黑";
+    font-weight: bold;
+}
+
+.foot-right
+{
+    float: right;
+    font-size: 13px;
+    font-family: "微软雅黑";
+    font-weight: bold;
+}
+
+.left-side-menu
+{
+    background: linear-gradient(135deg,#fa5c7c 0,#fa5c7cf0 60%);
+}
+
+.enlarged .side-nav .side-nav-item:hover .side-nav-link
+{
+    background: linear-gradient(135deg,#fa5c7c 0,#fa5c7cf0 60%);
+}
+
+a
+{
+    color: #fa5c7c80;
+}
+
+a:hover
+{
+    color: #fa5c7c;
+}
+
+.link
+{
+    color: #fa5c7c80;
+}
+.link:hover{
+    color: #fa5c7c80;
+}

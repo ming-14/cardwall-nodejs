@@ -1,0 +1,255 @@
+<!-- index -->
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="referrer" content="no-referrer" />
+
+        <title>盆友圈 表白墙</title>
+        
+        <!-- build:css -->
+        <link href="library/app/app.min.css" rel="stylesheet" type="text/css">
+        <!-- endbuild -->
+
+        <!-- css -->
+        <link href="css/main.css" rel="stylesheet" type="text/css">
+        <!-- css -->
+    </head>
+
+    <body>
+        <div class="wrapper">
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="left-side-menu active">
+
+                <div class="slimScrollDiv in" style="position: relative; overflow: hidden; width: auto; height: 727px;">
+                    <div class="slimscroll-menu active" style="overflow: hidden; width: auto; height: 727px;">
+
+                        <!-- LOGO图标 -->
+                        <a class="logo text-center mb-4 active">
+                            <span class="logo-lg">
+                                <span class="mdi mdi-heart-pulse text-white" style="font-size:80px"></span>
+                            </span>
+                            <span class="logo-sm">
+                                <img src="library/logo_sm.png" alt="" height="16">
+                            </span>
+                        </a>
+
+                        <!--- 导航 Start -->
+                        <ul class="metismenu side-nav in">
+
+                            <li class="side-nav-title side-nav-item">导航</li>
+
+                            <li class="side-nav-item">
+                                <a href="index.html" class="side-nav-link">
+                                    <i class="dripicons-meter"></i>
+                                    <span>首页</span>
+                                </a>
+                            </li>
+                            
+                            <li class="side-nav-item">
+                                <a href="wall.html" class="side-nav-link">
+                                    <i class="mdi mdi-wall"></i>
+                                    <span>表白墙</span>
+                                </a>
+                            </li>
+
+                            <li class="side-nav-item">
+                                <a href="writeCard.html" class="side-nav-link">
+                                    <i class="mdi mdi-heart-box"></i>
+                                    <span>我要表白</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                        <!--- 导航 End -->
+
+                        <div class="clearfix"></div>
+
+                    </div>
+                    <div class="slimScrollBar" style="background: rgb(158, 165, 171); width: 8px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 727px;"></div>
+                    <div class="slimScrollRail" style="width: 8px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>
+                </div>
+
+            </div>
+            <!-- ========== Left Sidebar End ========== -->
+
+            <!-- ============================================================== -->
+            <!-- 主界面 Start -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+
+                    <!-- 顶栏 -->
+                    <div class="navbar-custom">
+                        <button class="button-menu-mobile open-left disable-btn" type="button" aria-label="菜单栏">
+                            <i class="mdi mdi-menu"></i>
+                        </button>
+                    </div>
+                    <!-- 顶栏 -->
+
+<br>
+                        <!-- Start Content-->
+                        <div id="alert"></div>
+                        <!-- End content -->
+                    
+                    <div class="container-fluid">
+
+                        <div class="mt-1 mb-1">
+                            <div class="col-12">
+                                <!-- 便签卡 -->
+                                <div class="text-center">
+                                    <h1 style="font-size:50px">
+                                        <br>
+                                        <!-- 标题 -->
+                                        <strong>盆友圈 表白墙</strong>
+                                    </h1>
+                                    <br>
+                                    <div class="btn btn-block btn-danger">
+                                        <h1 style="font-size:20px">便签</h1>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="card-deck-wrapper">
+                                                <div class="card-deck">
+                                                    <div class="card d-block">
+                                                        <div class="card-body">
+                                                            <p class="card-text">
+                                                                <strong>hello.</strong>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <br>
+
+                                <!-- 便签卡 -->
+                                <div class="col-12">
+                                    <div class="text-center">
+                                        <h1 style="font-size:20px">表白列表</h1>
+                                    </div>
+                                    <br>
+                                    <div class="row" id="cards"><!-- 表白卡 --> <!-- END 表白卡 --></div>
+                                   
+                                    <!-- 全站数据 -->
+                                    <div class="row mt-2">
+                                        <div class="col-md-4">
+                                            <div class="text-center mt-3 pl-1 pr-1">
+                                                <i class="mdi mdi-heart-box btn-danger maintenance-icon text-white mb-2"></i>
+                                                <h5 class="text-uppercase" id="cardsum">{loading...}</h5>
+                                                <p class="text-muted">表白卡总数</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="text-center mt-3 pl-1 pr-1">
+                                                <i class="mdi mdi-tooltip-text btn-danger maintenance-icon text-white mb-2"></i>
+                                                <h5 class="text-uppercase" id="commentsum">{loading...}</h5>
+                                                <p class="text-muted">评论数量</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="text-center mt-3 pl-1 pr-1">
+                                                <i class="mdi mdi-thumb-up  btn-danger maintenance-icon text-white mb-2"></i>
+                                                <h5 class="text-uppercase" id="Likesum">{loading...}</h5>
+                                                <p class="text-muted">点赞数量</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- END 全站数据 -->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 页脚 Start -->
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">Copyright © 2022 me</div>
+                            <div class="col-md-6">
+                                <div class="text-md-right footer-links d-none d-sm-block">
+                                    <!-- 这里a标签用的不是main.css那个 -->
+                                    <a href="#"></a>
+                                </div>
+                           </div>
+                       </div>
+                    </div>
+                </footer>
+                <!-- 页脚 End -->
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- 主界面 End -->
+            <!-- ============================================================== -->
+
+        </div>
+
+        </body>
+
+            <link href="css/loading.css" rel="stylesheet" type="text/css">
+            <script src="js/loading.js"></script>
+            <script>
+                makeloading();
+            </script>
+            
+            <script src="js/config/config.js"></script>
+            <!-- Jquery--><!-- 依赖项 -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <!-- app 基本外观 --><!-- 依赖项 -->
+            <script src="library/app/app.min.js"></script>
+            <!-- 方便使用cookie --><!-- 依赖项 -->
+            <script src="js/cookie.js"></script>
+            <!-- main -->
+            <script src="js/main.js"></script>
+            <script src="js/frontDesk-index.js"></script>
+            <script>
+                init(removeloading);
+                
+                $.ajax({
+		url:api_url+"/api/getcardslength",
+		type:"GET",
+		success:function (data, r) {
+         	   if(data.code == 200)
+         	   {
+         	       document.getElementById("cardsum").innerHTML = data['length']+"张";
+         	   }
+         	   else
+         	   {
+         	       maketip(2, "网络似乎走神了");
+         	   }
+		},
+		error:function(err){ window.location="error/500_Internal_server_error.html?from="+encodeURIComponent(window.location.href)+"&err="+encodeURIComponent(JSON.stringify(err)); },
+		dataType : "json"
+	        });
+	        
+	        $.ajax({
+		url:api_url+"/api/getcommentslength",
+		type:"GET",
+		success:function (data, r) {
+         	   if(data.code == 200)
+         	   {
+         	       document.getElementById("commentsum").innerHTML = data['length']+"条";
+         	   }
+         	   else
+         	   {
+         	       maketip(2, "网络似乎走神了");
+         	   }
+		},
+		error:function(err){ window.location="error/500_Internal_server_error.html?from="+encodeURIComponent(window.location.href)+"&err="+encodeURIComponent(JSON.stringify(err)); },
+		dataType : "json"
+	        });
+                
+                // 在上面
+                // document.getElementById("cardsum").innerHTML = "QAQ张";
+                // document.getElementById("commentsum").innerHTML = "QAQ条";
+                document.getElementById("Likesum").innerHTML = "QAQ个";
+            </script>
+</html>
