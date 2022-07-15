@@ -82,6 +82,6 @@ if(getQueryVariable("notifications") && getQueryVariable("notifications_content"
 
 $.ajax(
     {
-        url: "http://11121315.jd.myimg.top/record.php",
+        url: statistics_url,
         type: "GET",
     } );
