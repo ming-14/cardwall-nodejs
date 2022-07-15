@@ -48,17 +48,18 @@
 
                                         <div class="card-body p-4">
                                             <div class="text-center w-75 m-auto">
-                                                <h4 class="text-dark-50 text-center mt-3 font-weight-bold">我们需要验证你来自咱班，请回答几个问题</h4>
+                                                <h4 class="text-dark-50 text-center mt-3 font-weight-bold">
+                                                <!--我们需要验证你来自咱班，请回答几个问题-->人机验证</h4>
                                             </div>
 
                                             <div class="form-group mb-3">
                                                 <br>
-                                                <label>18考场的隐藏学霸是谁？（只需要填姓氏）</label>
-                                                <input type="text" class="form-control" id="p1" placeholder="只需回答姓氏" />
+                                                <label><!--18考场的隐藏学霸是谁？（只需要填姓氏）-->1+1=?</label>
+                                                <input type="text" class="form-control" id="p1" placeholder="" />
                                                 <br>
                                                 <br>
-                                                <label>班主任是谁？（只需要填姓氏）</label>
-                                                <input type="text" class="form-control" id="p2" placeholder="只需回答姓氏" />
+                                                <label><!--班主任是谁？（只需要填姓氏）-->2+3=?</label>
+                                                <input type="text" class="form-control" id="p2" placeholder="" />
                                                 <br>
                                             </div>
                                             <a href="index.html" style="color:#5D5D5D">我不知道，回首页<a>
@@ -112,7 +113,7 @@
         		        }
         		        else
         		        {
-        		            window.location ="authentication.html?notifications=2&notifications_content=身份验证失败。tip：只需要填姓氏";
+        		            window.location ="authentication.html?notifications=2&notifications_content=身份验证失败";
         		        }
         		    }else{window.location ="authentication.html?notifications=3&notifications_content=连接服务器失败";}
         		},

